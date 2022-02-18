@@ -10,3 +10,6 @@ minutes=$((seconds / 60))
 seconds=$((seconds % 60))
 
 echo "$hours hour(s) $minutes minute(s) $seconds second(s)"
+
+
+echo "adding details by another branch"
