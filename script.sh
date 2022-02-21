@@ -13,9 +13,9 @@ echo "$hours hour(s) $minutes minute(s) $seconds second(s)"
 
 
 echo "So do you want to try again?"
-read  - p "Enter Y or N > " ans
-
-if [ $ans -eq  Y]
+read  -p "Enter Y or N > " ans
+echo " $ans "
+if [ $ans =  "Y" ]
 then
 . script.sh
 else 
