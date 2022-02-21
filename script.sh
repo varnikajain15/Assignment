@@ -12,4 +12,12 @@ seconds=$((seconds % 60))
 echo "$hours hour(s) $minutes minute(s) $seconds second(s)"
 
 
-echo "adding details by another branch"
+echo "So do you want to try again?"
+read  - p "Enter Y or N > " ans
+
+if [ $ans -eq  Y]
+then
+. script.sh
+else 
+echo "Thank You"
+fi 
