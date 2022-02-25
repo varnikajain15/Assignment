@@ -66,6 +66,26 @@ as
 
 select * from customer_details;
 
+create table stock (
+	prod_Id smallint references products(prod_Id),
+	availability smallint
+);
+insert into stock(prod_Id,availability) values (1,10), (2,10),(3,10) ,(4,10),(5,10),(6,10),(7,10),(8,10),(9,10);
+select * from stock;
+
+
+create or replace trigger stock_changes
+After insert on orders
+FOR EACH ROW
+when (availabilty > 0 )
+DECLARE
+instock number;
+begin
+	instock := :Old.availability - 1;
+	dbms_output.put_line('Old availability: ' || :OLD.availability); 
+   	dbms_output.put_line('New Stock : ' || instock);
+end;	
+	
 
 
 	
